@@ -1,6 +1,8 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, flash, session
+
 
 app = Flask(__name__)
+app.secret_key = "Yankees suck"
 
 @app.route('/')
 def index():
@@ -9,16 +11,22 @@ def index():
 @app.route('/result', methods=['POST'])
 def show_results():
     print ("Got POST results")
-    print(request.form['name'])
-    print(request.form['dojo_location'])
-    print(request.form['language'])
-    print(request.form['comment'])
-    return render_template('result.html',
-    name = request.form['name'],
-    dojo_location = request.form['dojo_location'],
-    language = request.form['language'],
-    comment = request.form['comment']
-    )
+    if len(request.form['name']) < 1:
+        flash('Name cannot be blank')
+        return redirect('/')
+    elif len(request.form['comment']) < 1:
+        flash('Comment cannot be blank')
+        return redirect('/')
+    elif len(request.form['comment']) > 120:
+        flash('Comment cannot be more than 120 characters')
+        return redirect('/')
+    else:
+        return render_template('result.html',
+                name = request.form['name'],
+                dojo_location = request.form['dojo_location'],
+                language = request.form['language'],
+                comment = request.form['comment']
+                )
 
 @app.route('/return', methods=['POST'])
 def back():
