@@ -1,0 +1,22 @@
+.box{
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    border-style: double;
+    border-width: thick;
+    border-color: blue;
+}
+
+#activity{
+    width: 70%;
+    height: 200px;
+    border-color: blue;
+    border-style: solid;
+    border-width: thick;
+    overflow-y: scroll;
+}
+
+.won{
+    color: blue;
+}
