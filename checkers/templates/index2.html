@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Checkerboard</title>
+        <style>
+            .square1 {
+                width: 50px;
+                height: 50px;
+                background-color: pink;
+                margin-right: 0;
+            }
+            .square2 {
+                width: 50px;
+                height: 50px;
+                background-color: black;
+                margin-right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Refactoring {{a}} by {{b}}</h1>
+        <div>
+            <table>
+                {%for i in range(a): %}
+                    <tr>
+                        {%for i in range(b): %}
+                            <td class='square1'></td>
+                            <td class='square2'></td>
+                        {%endfor%}
+                    </tr>
+                    <tr>
+                        {%for i in range(b): %}
+                            <td class='square2'></td>
+                            <td class='square1'></td>
+                        {%endfor%}
+                    </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </body>
+</html>

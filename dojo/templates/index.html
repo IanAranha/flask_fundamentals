@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Assignment</title>
+    </head>
+    <body>
+        <h1>Dojo Survey</h1>
+        <form action='/result' method='POST'>
+            <p>Your Name: <input type="text" name="name" placeholder="Enter your full name"></p>
+
+            <p>Dojo Location:
+                <select name="dojo_location">
+                    <option>Pick your Dojo Location</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="San Francisco">San Francisco</option>
+                    <option value="New York">New York</option>
+                    <option value="Denver">Denver</option>
+                    <option value="Kansas City">Kansas City</option>
+                </select>
+            </p>
+
+            <p>Favorite Language:
+                <select name="language">
+                    <option>Pick your favorite language</option>
+                    <option value="Python">Python</option>
+                    <option value="MEAN">MEAN</option>
+                    <option value="C_Sharp">C_Sharp</option>
+                    <option value="JavaScript">JavaScript</option>
+                </select>
+            </p>
+
+            <p><textarea name='comment' rows="8" cols="80" placeholder="Enter comment..."></textarea></p>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

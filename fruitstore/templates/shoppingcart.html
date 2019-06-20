@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Thank you for your order!</h1>
+        <p>We ordered {{order_total}} items for you and charged your student account on {{date_ordred}}</p>
+        <h3>You've ordered: </h3>
+        <table>
+            <thead>
+                <th>Fruit Name</th>
+                <th>Quantity</th>
+            </thead>
+            <tr>
+                <td>Strawberry</td>
+                <td>{{s_counter}}</td>
+            </tr>
+            <tr>
+                <td>Raspberry</td>
+                <td>{{r_counter}}</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>{{a_counter}}</td>
+            </tr>
+        </table>
+        <p>Your Information:</p>
+        <p>Name: {{name}}</p>
+        <p>Your Studen Id: {{id}}</p>
+    </body>
+    <form action='/back' method='POST'>
+        <input type='submit' value="Return to shopping cart">
+    </form>
+</html>

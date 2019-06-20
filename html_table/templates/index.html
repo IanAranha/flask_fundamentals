@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML TABLE</title>
+        <style>
+            #students {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 70%;
+            }
+
+            #students td, #students th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #students tr:nth-child(even){background-color: #f2f2f2;}
+
+            #students tr:hover {background-color: #ddd;}
+
+            #students th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #4CAF50;
+              color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table id='students'>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Full Name</th>
+            </tr>
+            {%for student in students%}
+            <tr>
+                <td>{{student['first_name']}}</td>
+                <td>{{student['last_name']}}</td>
+                <td>{{student['first_name']}} {{student['last_name']}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

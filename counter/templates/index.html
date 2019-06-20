@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Session Counter</title>
+        <style>
+            #reset{
+                background-color: #F70D3C;
+                color: black;
+                font-weight: bold;
+            }
+
+            #add{
+                background-color: #98FB98;
+                color: black;
+                font-weight: bold;
+            };
+        </style>
+    </head>
+    <body>
+        <h1>Counter</h1>
+        <p>This page has been view {{session['counter']}} times</p>
+        <form action="/add_two" method="post">
+            <button id='add' type="submit">ADD 2</button>
+        </form>
+        <form action="/destroy_session" method="post">
+            <button id='reset' type="submit">RESET COUNTER</button>
+        </form>
+    </body>
+</html>
