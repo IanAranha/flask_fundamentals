@@ -8,9 +8,11 @@
         <h1>Registration Page</h1>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
-                  {% for message in messages %}
-                    <p>{{message}}</p>
-                  {% endfor %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
             {% endif %}
         {% endwith %}
         <form action='/register' method='post'>
